@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA5306BD3ECB",
+      "boundary_crc": "0x2E40839601B2C931",
       "device": "xc7z020clg400-1",
       "name": "zyboZ7Bd",
       "synth_flow_mode": "Hierarchical",
@@ -9,7 +9,9 @@
       "validated": "true"
     },
     "design_tree": {
-      "processing_system7_0": ""
+      "processing_system7_0": "",
+      "proc_sys_reset_0": "",
+      "test_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -75,6 +77,46 @@
             "value_src": "default"
           }
         }
+      }
+    },
+    "ports": {
+      "reset_rtl": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      },
+      "sysclk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "zyboZ7Bd_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "led": {
+        "direction": "O"
       }
     },
     "components": {
@@ -1079,6 +1121,34 @@
             "value": "1"
           }
         }
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "zyboZ7Bd_proc_sys_reset_0_0"
+      },
+      "test_0": {
+        "vlnv": "xilinx.com:module_ref:test:1.0",
+        "xci_name": "zyboZ7Bd_test_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "test",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "zyboZ7Bd_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "led": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1099,7 +1169,26 @@
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
-          "processing_system7_0/M_AXI_GP0_ACLK"
+          "processing_system7_0/M_AXI_GP0_ACLK",
+          "proc_sys_reset_0/slowest_sync_clk"
+        ]
+      },
+      "reset_rtl_1": {
+        "ports": [
+          "reset_rtl",
+          "proc_sys_reset_0/ext_reset_in"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "sysclk",
+          "test_0/clk"
+        ]
+      },
+      "test_0_led": {
+        "ports": [
+          "test_0/led",
+          "led"
         ]
       }
     },

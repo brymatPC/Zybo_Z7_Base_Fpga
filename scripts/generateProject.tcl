@@ -1,5 +1,5 @@
 cd ../bd
-source "zybo_bd".tcl
+source zyboZ7Bd.tcl
 cd ..
-source "zybo".tcl
+source zyboZ7.tcl
 cd scripts

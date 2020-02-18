@@ -5,7 +5,7 @@
       "device": "xc7z020clg400-1",
       "name": "zyboZ7Bd",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.1",
+      "tool_version": "2019.2",
       "validated": "true"
     },
     "design_tree": {
@@ -18,24 +18,20 @@
         "mode": "Master",
         "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
         "parameters": {
-          "AXI_ARBITRATION_SCHEME": {
-            "value": "TDM",
-            "value_src": "default"
-          },
-          "BURST_LENGTH": {
-            "value": "8",
-            "value_src": "default"
-          },
           "CAN_DEBUG": {
             "value": "false",
             "value_src": "default"
           },
-          "CAS_LATENCY": {
-            "value": "11",
+          "TIMEPERIOD_PS": {
+            "value": "1250",
             "value_src": "default"
           },
-          "CAS_WRITE_LATENCY": {
-            "value": "11",
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
             "value_src": "default"
           },
           "CS_ENABLED": {
@@ -46,24 +42,28 @@
             "value": "true",
             "value_src": "default"
           },
-          "DATA_WIDTH": {
-            "value": "8",
-            "value_src": "default"
-          },
-          "MEMORY_TYPE": {
-            "value": "COMPONENTS",
+          "SLOT": {
+            "value": "Single",
             "value_src": "default"
           },
           "MEM_ADDR_MAP": {
             "value": "ROW_COLUMN_BANK",
             "value_src": "default"
           },
-          "SLOT": {
-            "value": "Single",
+          "BURST_LENGTH": {
+            "value": "8",
             "value_src": "default"
           },
-          "TIMEPERIOD_PS": {
-            "value": "1250",
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
             "value_src": "default"
           }
         }

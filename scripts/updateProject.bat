@@ -1,4 +1,4 @@
-set vivado=C:/Xilinx/Vivado/2019.1/bin/vivado
+set vivado=C:/Xilinx/Vivado/2019.2/bin/vivado
 
 RMDIR /S /Q "../work"
 
